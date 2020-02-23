@@ -24,7 +24,7 @@ def test_entrypoint(caplog, monkeypatch):
         with caplog.at_level("INFO"):
             with open("test.toml", "w") as f:
                 f.write("Hello World!")
-            result = runner.invoke(main.entrypoint, ["test.toml", "token123",])
+            result = runner.invoke(main.entrypoint, ["test.toml", "token123"])
             assert result.exit_code == 0
             assert len(caplog.records) == 1
             assert caplog.records[0].levelname == "INFO"
@@ -44,7 +44,7 @@ def test_entrypoint_debug(caplog, monkeypatch):
             with open("test.toml", "w") as f:
                 f.write("Hello World!")
             result = runner.invoke(
-                main.entrypoint, ["test.toml", "token123", "--debug",]
+                main.entrypoint, ["test.toml", "token123", "--debug"]
             )
             assert result.exit_code == 0
             assert len(caplog.records) == 1
@@ -66,7 +66,7 @@ def test_entrypoint_only(caplog, monkeypatch):
                 f.write("Hello World!")
             result = runner.invoke(
                 main.entrypoint,
-                ["test.toml", "token123", "--debug", "--only", "prune",],
+                ["test.toml", "token123", "--debug", "--only", "prune"],
             )
             assert result.exit_code == 0
             assert len(caplog.records) == 1
