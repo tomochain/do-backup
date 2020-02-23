@@ -1,15 +1,20 @@
-retention = 10
+default_retention = 5
 
 [droplets]
-names = [
-  'server01',
-  'server02',
-  'server03',
-]
+  [[droplets.by_name]]
+  name = "server01"
+  retention = 3
+
+  [[droplets.by_name]]
+  name = "server02"
+
+  [[droplets.by_tag]]
+  tag = "prod"
+  retention = 20
 
 [volumes]
-names = [
-  'db01',
-  'redis01',
-  'redis02',
-]
+  [[volumes.by_name]]
+  name = "db01"
+
+  [[volumes.by_tag]]
+  name = "redis"
