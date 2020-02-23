@@ -10,7 +10,7 @@ keywords = ["digitalocean", "do", "snapshot", "snapshots", "backup"]
 authors = ["etienne-napoleone <etienne@tomochain.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.5"
+python = "^3.6"
 python-digitalocean = "^1.14"
 colorlog = "^3.1"
 toml = "^0.10.0"
@@ -20,7 +20,11 @@ click = "^7.0"
 pytest = "^3.0"
 flake8 = "^3.6"
 coveralls = "^1.5"
-
+mypy = "^0.761"
+flake8-black = "^0.1.1"
 
 [tool.poetry.scripts]
 goutte = "goutte.main:entrypoint"
+
+[tool.black]
+line-length = 79
