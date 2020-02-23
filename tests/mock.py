@@ -13,12 +13,18 @@ class Snapshot:
 
     @staticmethod
     def get_object(api_token=None, snapshot_id=None):
-        if snapshot_id == '1337':
-            return Snapshot(name=f'snapshot{snapshot_id}', id=snapshot_id,
-                            created_at=f'{snapshot_id}')
+        if snapshot_id == "1337":
+            return Snapshot(
+                name=f"snapshot{snapshot_id}",
+                id=snapshot_id,
+                created_at=f"{snapshot_id}",
+            )
         else:
-            return Snapshot(name=f'goutte-snapshot{snapshot_id}',
-                            id=snapshot_id, created_at=f'{snapshot_id}')
+            return Snapshot(
+                name=f"goutte-snapshot{snapshot_id}",
+                id=snapshot_id,
+                created_at=f"{snapshot_id}",
+            )
 
 
 class Volume:
@@ -48,14 +54,10 @@ class Manager:
         self.token = token
 
     def get_all_volumes(self):
-        return [
-            Volume(name='testvol')
-        ]
+        return [Volume(name="testvol")]
 
     def get_all_droplets(self):
-        return [
-            Droplet(name='testdroplet')
-        ]
+        return [Droplet(name="testdroplet")]
 
 
 class File:
